@@ -1,0 +1,50 @@
+*** Starting uWSGI 2.0.19.1 (64bit) on [Wed Jul 22 16:14:47 2020] ***
+compiled with version: 8.3.0 on 22 July 2020 16:07:46
+os: Linux-3.10.0-957.21.3.el7.x86_64 #1 SMP Tue Jun 18 16:35:19 UTC 2019
+nodename: eb4a9b39b443
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /var/www/html/django_docker
+writing pidfile to /tmp/django_docker-master.pid
+detected binary path: /usr/local/bin/uwsgi
+chdir() to /var/www/html/django_docker
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8000 fd 3
+setgid() to 33
+setuid() to 33
+Python version: 3.7.8 (default, Jun 30 2020, 18:27:23)  [GCC 8.3.0]
+Python main interpreter initialized at 0x55a9f5dc3940
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 403077 bytes (393 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x55a9f5dc3940 pid: 47 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 47)
+spawned uWSGI worker 1 (pid: 48, cores: 1)
+spawned uWSGI worker 2 (pid: 49, cores: 1)
+Python auto-reloader enabled
+{address space usage: 164970496 bytes/157MB} {rss usage: 29941760 bytes/28MB} [pid: 48|app: 0|req: 1/1] 111.194.51.136 () {44 vars in 1278 bytes} [Wed Jul 22 16:14:52 2020] GET /admin/ => generated 0 bytes in 17 msecs (HTTP/1.1 302) 8 headers in 301 bytes (1 switches on core 0)
+{address space usage: 166158336 bytes/158MB} {rss usage: 31522816 bytes/30MB} [pid: 49|app: 0|req: 1/2] 111.194.51.136 () {44 vars in 1315 bytes} [Wed Jul 22 16:14:52 2020] GET /admin/login/?next=/admin/ => generated 1913 bytes in 60 msecs (HTTP/1.1 200) 8 headers in 431 bytes (1 switches on core 0)
+{address space usage: 165494784 bytes/157MB} {rss usage: 30703616 bytes/29MB} [pid: 48|app: 0|req: 2/3] 103.215.248.10 () {32 vars in 455 bytes} [Wed Jul 22 16:33:21 2020] GET / => generated 179 bytes in 10 msecs (HTTP/1.1 404) 4 headers in 128 bytes (1 switches on core 0)
+{address space usage: 165494784 bytes/157MB} {rss usage: 30703616 bytes/29MB} [pid: 48|app: 0|req: 3/4] 213.216.48.16 () {32 vars in 460 bytes} [Wed Jul 22 17:15:48 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 4 headers in 128 bytes (1 switches on core 0)
+{address space usage: 165494784 bytes/157MB} {rss usage: 30703616 bytes/29MB} [pid: 48|app: 0|req: 4/5] 111.30.33.149 () {40 vars in 692 bytes} [Wed Jul 22 17:53:38 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 4 headers in 128 bytes (1 switches on core 0)
+{address space usage: 165494784 bytes/157MB} {rss usage: 30703616 bytes/29MB} [pid: 48|app: 0|req: 5/6] 93.174.93.139 () {40 vars in 558 bytes} [Wed Jul 22 18:01:12 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 4 headers in 128 bytes (1 switches on core 0)
+{address space usage: 165494784 bytes/157MB} {rss usage: 30703616 bytes/29MB} [pid: 48|app: 0|req: 6/7] 185.39.11.105 () {40 vars in 661 bytes} [Wed Jul 22 18:39:28 2020] GET /config/getuser?index=0 => generated 179 bytes in 1 msecs (HTTP/1.1 404) 4 headers in 128 bytes (1 switches on core 0)
+{address space usage: 165494784 bytes/157MB} {rss usage: 30703616 bytes/29MB} [pid: 48|app: 0|req: 7/8] 106.14.227.62 () {34 vars in 421 bytes} [Wed Jul 22 18:44:38 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 4 headers in 128 bytes (1 switches on core 0)
+{address space usage: 165494784 bytes/157MB} {rss usage: 30703616 bytes/29MB} [pid: 48|app: 0|req: 8/9] 163.172.66.130 () {38 vars in 527 bytes} [Wed Jul 22 19:11:15 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 4 headers in 128 bytes (1 switches on core 0)
+{address space usage: 165494784 bytes/157MB} {rss usage: 30703616 bytes/29MB} [pid: 48|app: 0|req: 9/10] 80.82.70.187 () {32 vars in 423 bytes} [Wed Jul 22 19:18:43 2020] GET /cache/global/img/gs.gif => generated 179 bytes in 1 msecs (HTTP/1.1 404) 4 headers in 128 bytes (1 switches on core 0)
+{address space usage: 165494784 bytes/157MB} {rss usage: 30883840 bytes/29MB} [pid: 48|app: 0|req: 10/11] 139.205.177.98 () {36 vars in 743 bytes} [Wed Jul 22 19:35:03 2020] GET /Public/home/appjs/Index.js => generated 179 bytes in 1 msecs (HTTP/1.1 404) 4 headers in 128 bytes (1 switches on core 0)
+{address space usage: 165494784 bytes/157MB} {rss usage: 30883840 bytes/29MB} [pid: 48|app: 0|req: 11/12] 40.114.171.75 () {34 vars in 382 bytes} [Wed Jul 22 21:37:11 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 4 headers in 128 bytes (1 switches on core 0)
+{address space usage: 165494784 bytes/157MB} {rss usage: 30957568 bytes/29MB} [pid: 48|app: 0|req: 12/13] 165.16.37.150 () {32 vars in 454 bytes} [Wed Jul 22 22:20:36 2020] GET / => generated 179 bytes in 3 msecs (HTTP/1.1 404) 4 headers in 128 bytes (1 switches on core 0)
+{address space usage: 165494784 bytes/157MB} {rss usage: 30957568 bytes/29MB} [pid: 48|app: 0|req: 13/14] 111.30.33.149 () {40 vars in 692 bytes} [Wed Jul 22 23:42:07 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 4 headers in 128 bytes (1 switches on core 0)
+{address space usage: 165494784 bytes/157MB} {rss usage: 30957568 bytes/29MB} [pid: 48|app: 0|req: 14/15] 190.145.136.82 () {32 vars in 455 bytes} [Thu Jul 23 00:47:42 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 4 headers in 128 bytes (1 switches on core 0)
+{address space usage: 165494784 bytes/157MB} {rss usage: 30957568 bytes/29MB} [pid: 48|app: 0|req: 15/16] 111.30.33.149 () {40 vars in 692 bytes} [Thu Jul 23 00:53:06 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 4 headers in 128 bytes (1 switches on core 0)
+{address space usage: 165494784 bytes/157MB} {rss usage: 30957568 bytes/29MB} [pid: 48|app: 0|req: 16/17] 60.191.125.35 () {36 vars in 574 bytes} [Thu Jul 23 01:17:12 2020] HEAD / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 4 headers in 128 bytes (1 switches on core 0)

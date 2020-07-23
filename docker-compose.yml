@@ -1,0 +1,88 @@
+# 服务编排配置文件
+
+# 指定版本
+version: "3"
+
+# 自定义数据卷，谓语宿主机/var/lib/docker/vilumes内
+volumes:
+    django_docker_db_vol:
+    django_docker_redis_vol:
+    django_docker_media_vol:
+
+services:
+    redis:
+        # 指定基础镜像
+        image: redis:5
+        # 启动容器的时候运行的命令
+        command: redis-server /etc/redis/redis.conf
+        volumes: 
+            - django_docker_redis_vol:/data
+            # 挂载redis配置文件
+            - ./compose/redis/redis.conf:/etc/redis/redis.conf
+        ports:
+            - "6379:6379"
+        restart: always
+    
+    db:
+        image: mysql:5.7
+        environment: 
+            # 数据库密码
+            - MYSQL_ROOT_PASSWORD=1277431229
+            # 数据库名称
+            - MYSQL_DATABASE=django_docker
+            # 数据库用户名
+            - MYSQL_USER=wangdong
+            # 用户密码
+            - MYSQL_PASSWORD=wangdong
+        volumes: 
+            # 挂载数据库数据，可读写
+            - django_docker_db_vol:/var/lib/mysql:rw
+            # 挂载mysql配置文件
+            - ./compose/mysql/conf/my.cnf:/etc/mysql/my.cnf
+            # 挂载数据库初始化sql脚本
+            - ./compose/mysql/init:/docker-entrypoint-initdb.d
+        ports:
+            - "3306:3306"
+        restart: always
+
+    web:
+        # 指定Dockerfile文件位置
+        build: ./django_docker
+        # 指定暴露端口，共link的容器使用
+        expose: 
+            - "8000"
+        volumes: 
+            - ./django_docker:/var/www/html/django_docker
+            - django_docker_media_vol:/var/www/html/django_docker/media
+            - ./compose/uwsgi:/tmp
+        links:
+            - db
+            - redis
+        # 设置依赖关系
+        depends_on: 
+            - db
+            - redis
+        
+        environment: 
+            - DEBUG=False
+        restart: always
+        tty: true
+        stdin_open: true
+    
+    nginx:
+        build: ./compose/nginx
+        ports:
+            - "80:80"
+            - "443:443"
+        expose:
+            - "80"
+        volumes: 
+            - ./django_docker/static:/usr/share/nginx/html/static
+            - ./compose/nginx/ssl:/usr/share/nginx/ssl
+            - ./compose/nginx/log:/var/log/nginx/log
+            - django_docker_media_vol:/usr/share/nginx/html/media
+        links:
+            - web
+        depends_on: 
+            - web
+        restart: always
