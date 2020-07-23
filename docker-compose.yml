@@ -3,7 +3,7 @@
 # 指定版本
 version: "3"
 
-# 自定义数据卷，位于宿主机/var/lib/docker/vilumes内
+# 自定义数据卷，位于宿主机/var/lib/docker/volumes内,这些目录都是docker自动分配和维护的
 volumes:
     django_docker_db_vol:
     django_docker_redis_vol:
