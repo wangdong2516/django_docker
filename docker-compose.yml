@@ -79,7 +79,7 @@ services:
         volumes: 
             - ./django_docker/static:/usr/share/nginx/html/static
             - ./compose/nginx/ssl:/usr/share/nginx/ssl
-            - ./compose/nginx/log:/var/log/nginx/log
+            - ./compose/nginx/log:/var/log/nginx
             - django_docker_media_vol:/usr/share/nginx/html/media
         links:
             - web
