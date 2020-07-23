@@ -20,7 +20,7 @@ services:
             # 挂载redis配置文件
             - ./compose/redis/redis.conf:/etc/redis/redis.conf
         ports:
-            - "6379:6379"
+            - "6378:6379"
         restart: always
     
     db:
@@ -42,7 +42,7 @@ services:
             # 挂载数据库初始化sql脚本
             - ./compose/mysql/init:/docker-entrypoint-initdb.d
         ports:
-            - "3306:3306"
+            - "3307:3306"
         restart: always
 
     web:
@@ -72,7 +72,7 @@ services:
     nginx:
         build: ./compose/nginx
         ports:
-            - "80:80"
+            - "8520:80"
             - "443:443"
         expose:
             - "80"
