@@ -3,7 +3,7 @@
 # 指定版本
 version: "3"
 
-# 自定义数据卷，谓语宿主机/var/lib/docker/vilumes内
+# 自定义数据卷，位于宿主机/var/lib/docker/vilumes内
 volumes:
     django_docker_db_vol:
     django_docker_redis_vol:
@@ -72,7 +72,7 @@ services:
     nginx:
         build: ./compose/nginx
         ports:
-            - "8520:80"
+            - "8525:80"
             - "443:443"
         expose:
             - "80"
